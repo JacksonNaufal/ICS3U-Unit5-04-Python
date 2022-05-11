@@ -19,8 +19,8 @@ def grade_function(radius, height):
 def main():
 
     # input
-    user_radius = input("Enter Your radius (cm): ")
-    user_height = input("Enter Your height (cm): ")
+    user_radius = input("Enter Your radius (mm): ")
+    user_height = input("Enter Your height (mm): ")
 
     # process
     try:
@@ -30,7 +30,7 @@ def main():
             grade_function(radius=user_radius_int, height=user_height_int), 2
         )
 
-        print("The volume is {0} cm³".format(function_grade))
+        print("The volume is {0} mm³".format(function_grade))
 
     except Exception:
         print("Not An Integer")
