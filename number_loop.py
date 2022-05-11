@@ -4,75 +4,35 @@
 # Created on: March 2022
 # This is whats your grade level
 
+import math 
 
-def grade_function(grade_level):
+def grade_function(radius, height):
     
-    
-    
-    if grade_level == "4+":
-        grade_percentage = 97.5
-
-    elif grade_level == "4":
-        grade_percentage = 90.5
-
-    elif grade_level == "4-":
-        grade_percentage = 83  
-
-    elif grade_level == "3+":
-        grade_percentage = 78
-
-    elif grade_level == "3":
-        grade_percentage = 74.5
-
-    elif grade_level == "3-":
-        grade_percentage = 71
-
-    elif grade_level == "2+":
-        grade_percentage = 68
-
-    elif grade_level == "2":
-        grade_percentage = 65.5
-
-    elif grade_level == "2-":
-        grade_percentage = 61
-
-    elif grade_level == "1+":
-        grade_percentage = 58
-
-    elif grade_level == "1":
-        grade_percentage = 54.5
-
-    elif grade_level == "1-":
-        grade_percentage = 51
-
-    elif grade_level == "R":
-        grade_percentage = 39.5
-    else:
-        grade_percentage = -1
-
-    return grade_percentage
-
-
     # output
-
+    
+    volume = math.pi * (radius ** 2) * height
+    
+    return volume
 
 def main():
-
-    # call function
-
-    level_grade = input("Enter Your grade (4+, 4, 4-, etc): ")
     
-
-    function_grade = grade_function(level_grade)
+    # input
+    user_radius = input("Enter Your radius (mm): ")
+    user_height = input("Enter Your height (mm): ")   
     
+    # process
+    try:
+        user_radius_int = float(user_radius)
+        user_height_int = float(user_height)
+        function_grade = grade_function(radius = user_radius_int, height = user_height_int)
+        
+        print("The volume is {0} cm³".format(function_grade))
     
-    if function_grade == -1:
-        print("Invalid Input")
-    else:
-        print ("The {0} level is a {1}%.".format(level_grade, function_grade))
-
-
-    print("\nDone.")
+    except Exception:
+        print("Not An Integer")
+        
+    finally:
+        print("\nDone.")
 
 
 if __name__ == "__main__":
